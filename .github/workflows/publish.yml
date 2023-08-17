@@ -8,22 +8,7 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: 安装pnpm
-        run: npm install pnpm -g
-      - name: 安装依赖
-        run: pnpm i --no-frozen-lockfile
-      - name: 前端项目打包
-        run: pnpm build:prod
-
   publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
