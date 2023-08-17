@@ -30,7 +30,7 @@
     "(!template/**/*)*.{js,ts}": [
       "pnpm run prettier"
     ],
-    "(!template/**/*)*.{ts}": [
+    "(!template/**/*)*.ts": [
       "eslint --fix"
     ]
   },
