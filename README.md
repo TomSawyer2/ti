@@ -43,3 +43,9 @@ pnpm build
 一些新增预设的tips：
 
 - 在预设文件内可以通过`{{ @ti.inject="xxx" }}`指定名为xxx变量的占位符，在生成代码时会将命令行中的xxx变量注入到对应位置。
+
+## 发布
+
+```bash
+pnpm pub
+```
