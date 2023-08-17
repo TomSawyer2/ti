@@ -20,7 +20,7 @@ jobs:
         run: npm install pnpm -g
       - name: 安装依赖
         run: pnpm i --no-frozen-lockfile
-      - name: 前端项目打包
+      - name: 项目打包
         run: pnpm pub
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH}}
