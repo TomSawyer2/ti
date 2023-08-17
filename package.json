@@ -1,14 +1,13 @@
 {
   "name": "@tomsawyer2/ti",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A framework generator.",
   "scripts": {
     "dev": "nodemon",
     "build": "rimraf dist && webpack --mode production && cp -r ./template ./dist/template && npm link --force",
     "build:prod": "rimraf dist && webpack --mode production && cp -r ./template ./dist/template",
     "prepare": "husky install",
-    "prepublishOnly": "pnpm build:prod",
-    "publish": "npm publish --access public",
+    "pub": "pnpm build:prod && npm publish --access public",
     "lint-staged": "lint-staged",
     "lint": "eslint --ext .ts ./",
     "lint:fix": "pnpm lint --fix",
