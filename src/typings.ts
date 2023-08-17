@@ -7,3 +7,7 @@ export const enum FrontEndKit {
   umiStarter = 'umi-starter',
   umiPwa = 'umi-pwa',
 }
+
+export const enum BackEndKit {
+  nestStarter = 'nest-starter',
+}

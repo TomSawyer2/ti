@@ -1,10 +1,10 @@
 {
-  "name": "ti",
+  "name": "@tomsawyer2/ti",
   "version": "0.0.1",
   "description": "A framework generator.",
   "scripts": {
     "dev": "nodemon",
-    "build": "rimraf dist && webpack --mode production && cp -r ./template ./dist/template && npm link",
+    "build": "rimraf dist && webpack --mode production && cp -r ./template ./dist/template && npm link --force",
     "build:prod": "rimraf dist && webpack --mode production && cp -r ./template ./dist/template",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build:prod",

@@ -7,8 +7,10 @@
 ## 运行
 
 ```bash
-pnpm i
-pnpm dev
+npm config set registry https://registry.npmmirror.com
+npm i pnpm -g
+pnpm i 
+pnpm run dev
 ```
 
 ## 部署
