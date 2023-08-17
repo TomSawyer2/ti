@@ -1,6 +1,6 @@
 {
   "name": "@tomsawyer2/ti",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A framework generator.",
   "scripts": {
     "dev": "nodemon",
