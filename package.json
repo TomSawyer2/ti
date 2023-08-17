@@ -18,8 +18,7 @@
   },
   "files": [
     "dist",
-    "bin",
-    "template"
+    "bin"
   ],
   "husky": {
     "hooks": {
