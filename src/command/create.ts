@@ -1,8 +1,8 @@
 import { Command } from 'commander';
 import { commandExceptionProcess } from '../util/exception-process';
 import { fail, log, start, success } from '../util/log';
-import { FrontEndKit, Type } from '../typings';
-import { createFeProject } from '../create/fe';
+import { BackEndKit, FrontEndKit, Type } from '../typings';
+import { createFeProject, createBeProject } from '../create';
 
 export function initCreate(program: Command): void {
   program
@@ -14,25 +14,23 @@ export function initCreate(program: Command): void {
     .option('-n, --name <name>', '项目名称')
     .action(async (_, options) => {
       const { _optionValues } = options;
-      const { type, kit, name }: { type: Type; kit: FrontEndKit; name: string } = _optionValues;
+      const { type, kit, name }: { type: Type; kit: FrontEndKit | BackEndKit; name: string } = _optionValues;
       start('正在启动生成');
       await commandExceptionProcess(
         async () => {
-          if (!type) throw new Error('type is required!');
-          if (!kit) throw new Error('kit is required!');
-          if (!name) throw new Error('name is required!');
+          if (!type) throw new Error('需要指定框架类型');
+          if (!kit) throw new Error('需要指定框架预设');
+          if (!name) throw new Error('需要指定项目名称');
           log(`开始生成 ${name} 项目，使用 ${type} ${kit} 框架`);
           switch (type) {
             case Type.fe:
-              createFeProject(kit, {
-                name,
-              });
+              createFeProject(kit as FrontEndKit, { name });
               break;
             case Type.be:
-              // todo
+              createBeProject(kit as BackEndKit, { name });
               break;
             default:
-              break;
+              throw new Error('不存在对应类型');
           }
           success('框架代码生成成功');
         },

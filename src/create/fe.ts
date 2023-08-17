@@ -1,6 +1,6 @@
 import { copyDir } from '../util/file';
 import { FrontEndKit } from '../typings';
-import { injectFiles } from 'src/util/inject';
+import { injectFiles } from '../util/inject';
 
 export const createFeProject = (kit: FrontEndKit, data: { name: string }): void => {
   const { name } = data;
@@ -11,15 +11,22 @@ export const createFeProject = (kit: FrontEndKit, data: { name: string }): void 
       injectFiles(targetPath, data);
       break;
     case FrontEndKit.umiPwa:
+      createUmiPwa(name);
+      injectFiles(targetPath, data);
       break;
     default:
-      break;
+      throw new Error('不存在对应框架');
   }
 };
 
 const createUmiStarter = (name: string): void => {
-  // 将template/umi-starter文件夹复制到当前文件夹，并重命名为name
   const templatePath = `${__dirname}/template/umi-starter`;
+  const targetPath = `${process.cwd()}/${name}`;
+  copyDir(templatePath, targetPath);
+};
+
+const createUmiPwa = (name: string): void => {
+  const templatePath = `${__dirname}/template/umi-pwa`;
   const targetPath = `${process.cwd()}/${name}`;
   copyDir(templatePath, targetPath);
 };

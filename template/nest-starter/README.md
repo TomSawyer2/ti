@@ -2,7 +2,7 @@
 
 ## 简介
 
-{{ @ti.inject="name" }}是一个前端项目。
+{{ @ti.inject="name" }}是一个使用nestjs的后端项目。
 
 ## 运行
 
@@ -10,11 +10,10 @@
 npm config set registry https://registry.npmmirror.com
 npm i pnpm -g
 pnpm i 
-pnpm run dev
-```
 
-## 部署
+pnpm run start
 
-```bash
-pnpm build
+pnpm run start:dev
+
+pnpm run start:prod
 ```

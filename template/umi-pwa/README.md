@@ -2,7 +2,7 @@
 
 ## 简介
 
-{{ @ti.inject="name" }}是一个前端项目。
+{{ @ti.inject="name" }}是一个带PWA的前端项目。
 
 ## 运行
 
