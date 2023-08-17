@@ -5,3 +5,4 @@ webpack.config.js
 bin/**
 jest.config.js
 test/**
+template/**

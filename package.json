@@ -4,8 +4,8 @@
   "description": "A framework generator.",
   "scripts": {
     "dev": "nodemon",
-    "build": "rimraf dist && webpack --mode production && npm link",
-    "build:prod": "rimraf dist && webpack --mode production",
+    "build": "rimraf dist && webpack --mode production && cp -r ./template ./dist/template && npm link",
+    "build:prod": "rimraf dist && webpack --mode production && cp -r ./template ./dist/template",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build:prod",
     "lint-staged": "lint-staged",
@@ -18,7 +18,8 @@
   },
   "files": [
     "dist",
-    "bin"
+    "bin",
+    "template"
   ],
   "husky": {
     "hooks": {
@@ -26,10 +27,10 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,ts,tsx}": [
+    "(!template)/**/*.{js,ts}": [
       "pnpm run prettier"
     ],
-    "**/*.{ts,spec.js,tsx}": [
+    "(!template)/**/*.{ts}": [
       "eslint --fix"
     ]
   },
