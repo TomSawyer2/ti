@@ -3,7 +3,7 @@ import { error } from './log';
 /**
  * 全局异常捕捉
  *
- * @exports
+ * @export
  * @param {*} callback
  * @param {*} errCallback
  */

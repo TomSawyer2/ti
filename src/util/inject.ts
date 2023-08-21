@@ -4,7 +4,7 @@ import * as path from 'path';
 /**
  * 将path路径下所有文件中匹配到{{ @ti.inject="xxx" }}的字符串替换为xxx变量的值
  *
- * @exports
+ * @export
  * @param {string} path
  * @param {*} data
  */

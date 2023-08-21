@@ -5,7 +5,7 @@ import { injectFiles } from '../util/inject';
 /**
  * 创建前端项目
  *
- * @exports
+ * @export
  * @param {FrontEndKit} kit
  * @param {*} data
  */

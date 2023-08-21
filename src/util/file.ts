@@ -5,7 +5,7 @@ import { error } from './log';
 /**
  * 保存文件
  *
- * @exports
+ * @export
  * @param {string} content 内容
  * @param {string} pathName 路径
  * @param {string} fileName 文件名
@@ -21,7 +21,7 @@ export const saveFile = (content: string, pathName: string, fileName: string): v
 /**
  * 删除文件夹
  *
- * @exports
+ * @export
  * @param {string} dir 文件夹名称
  */
 export const deleteDir = (dir: string): void => {
@@ -48,7 +48,7 @@ export const deleteDir = (dir: string): void => {
 /**
  * 递归复制文件夹
  *
- * @exports
+ * @export
  * @param {string} src
  * @param {string} dest
  */
