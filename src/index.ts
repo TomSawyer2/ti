@@ -4,7 +4,7 @@ import { error } from './util/log';
 
 /**
  * @export
- * @return {*}
+ * @return {Command}
  */
 export function createProgram(): Command {
   const program = new Command();

@@ -4,6 +4,11 @@ import { fail, log, start, success } from '../util/log';
 import { BackEndKit, FrontEndKit, Type } from '../typings';
 import { createFeProject, createBeProject } from '../create';
 
+/**
+ * Create指令入口
+ *
+ * @param {Command} program
+ */
 export function initCreate(program: Command): void {
   program
     .command('create')

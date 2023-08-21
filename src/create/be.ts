@@ -2,6 +2,13 @@ import { copyDir } from '../util/file';
 import { BackEndKit } from '../typings';
 import { injectFiles } from '../util/inject';
 
+/**
+ * 创建后端项目
+ *
+ * @exports
+ * @param {BackEndKit} kit
+ * @param {*} data
+ */
 export const createBeProject = (kit: BackEndKit, data: { name: string }): void => {
   const { name } = data;
   const targetPath = `${process.cwd()}/${name}`;
@@ -15,6 +22,11 @@ export const createBeProject = (kit: BackEndKit, data: { name: string }): void =
   }
 };
 
+/**
+ * 创建nest-starter
+ *
+ * @param {string} name
+ */
 const createNestStarter = (name: string): void => {
   const templatePath = `${__dirname}/template/nest-starter`;
   const targetPath = `${process.cwd()}/${name}`;
