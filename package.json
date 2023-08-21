@@ -26,12 +26,13 @@
     }
   },
   "lint-staged": {
-    "(!template/**/*)*.{js,ts}": [
+    "**/*.{js,ts}": [
       "pnpm run prettier"
     ],
-    "(!template/**/*)*.ts": [
+    "**/*.ts": [
       "eslint --fix"
-    ]
+    ],
+    "!./template/**/*": []
   },
   "repository": {
     "type": "git",
