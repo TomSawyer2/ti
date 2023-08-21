@@ -46,6 +46,4 @@ pnpm build
 
 ## 发布
 
-```bash
-pnpm pub
-```
+修改`package.json`中的版本号，打好tag，推代码和tag之后直接在GitHub中设置Releases，自动发版至npm。
