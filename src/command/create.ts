@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { commandExceptionProcess } from '../util/exception-process';
+import { exception } from '../util/exception';
 import { fail, log, start, success } from '../util/log';
 import { BackEndKit, FrontEndKit, Type } from '../typings';
 import { createFeProject, createBeProject } from '../create';
@@ -16,7 +16,7 @@ export function initCreate(program: Command): void {
       const { _optionValues } = options;
       const { type, kit, name }: { type: Type; kit: FrontEndKit | BackEndKit; name: string } = _optionValues;
       start('正在启动生成');
-      await commandExceptionProcess(
+      await exception(
         async () => {
           if (!type) throw new Error('需要指定框架类型');
           if (!kit) throw new Error('需要指定框架预设');
