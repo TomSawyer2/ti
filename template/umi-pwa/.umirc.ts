@@ -1,5 +1,4 @@
 import { defineConfig } from 'umi';
-import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 import { InjectManifest } from 'workbox-webpack-plugin';
 
 export default defineConfig({
@@ -17,9 +16,7 @@ export default defineConfig({
   ],
   title: '{{ @ti.inject="name" }}',
   fastRefresh: {},
-  dynamicImport: {
-    loading: '@/components/LoadingBee/index',
-  },
+  dynamicImport: {},
   // mfsu: {},
   analyze: {
     analyzerMode: 'server',
@@ -33,11 +30,6 @@ export default defineConfig({
   copy: ['/src/pwa/manifest.webmanifest'],
   links: [{ rel: 'manifest', href: '/manifest.webmanifest' }],
   chainWebpack: (config: any) => {
-    config.plugin('monaco-editor').use(new MonacoWebpackPlugin(), [
-      {
-        languages: ['java'],
-      },
-    ]);
     config.plugin('workbox').use(InjectManifest, [
       {
         swSrc: './src/pwa/service-worker.ts',
